@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C81DB01916CF532A00252270 /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C81DB01816CF532A00252270 /* UsernameViewController.m */; };
+		C81DB01C16CF567000252270 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C81DB01B16CF567000252270 /* ProfileViewController.m */; };
 		C82EA51B16CDCAEC00FB1335 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82EA51A16CDCAEC00FB1335 /* UIKit.framework */; };
 		C82EA51D16CDCAEC00FB1335 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82EA51C16CDCAEC00FB1335 /* Foundation.framework */; };
 		C82EA51F16CDCAEC00FB1335 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82EA51E16CDCAEC00FB1335 /* CoreGraphics.framework */; };
@@ -16,9 +18,17 @@
 		C82EA52D16CDCAEC00FB1335 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C82EA52C16CDCAEC00FB1335 /* Default.png */; };
 		C82EA52F16CDCAEC00FB1335 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C82EA52E16CDCAEC00FB1335 /* Default@2x.png */; };
 		C82EA53116CDCAEC00FB1335 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C82EA53016CDCAEC00FB1335 /* Default-568h@2x.png */; };
+		C83DAB6E16CF3942002DE307 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83DAB6D16CF3942002DE307 /* Social.framework */; };
+		C83DAB7016CF39A4002DE307 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83DAB6F16CF39A4002DE307 /* Accounts.framework */; };
+		C83DAB7216CF39E7002DE307 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C83DAB7116CF39E7002DE307 /* Storyboard.storyboard */; };
+		C83DAB7416CF3B0F002DE307 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83DAB7316CF3B0F002DE307 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C81DB01716CF532A00252270 /* UsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameViewController.h; sourceTree = "<group>"; };
+		C81DB01816CF532A00252270 /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
+		C81DB01A16CF567000252270 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		C81DB01B16CF567000252270 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		C82EA51716CDCAEC00FB1335 /* Twitter Wall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter Wall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82EA51A16CDCAEC00FB1335 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C82EA51C16CDCAEC00FB1335 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,6 +42,10 @@
 		C82EA52C16CDCAEC00FB1335 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C82EA52E16CDCAEC00FB1335 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C82EA53016CDCAEC00FB1335 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C83DAB6D16CF3942002DE307 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C83DAB6F16CF39A4002DE307 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		C83DAB7116CF39E7002DE307 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		C83DAB7316CF3B0F002DE307 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +53,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83DAB7416CF3B0F002DE307 /* QuartzCore.framework in Frameworks */,
+				C83DAB7016CF39A4002DE307 /* Accounts.framework in Frameworks */,
+				C83DAB6E16CF3942002DE307 /* Social.framework in Frameworks */,
 				C82EA51B16CDCAEC00FB1335 /* UIKit.framework in Frameworks */,
 				C82EA51D16CDCAEC00FB1335 /* Foundation.framework in Frameworks */,
 				C82EA51F16CDCAEC00FB1335 /* CoreGraphics.framework in Frameworks */,
@@ -51,6 +68,11 @@
 		C82EA50E16CDCAEB00FB1335 = {
 			isa = PBXGroup;
 			children = (
+				C81DB01716CF532A00252270 /* UsernameViewController.h */,
+				C81DB01816CF532A00252270 /* UsernameViewController.m */,
+				C81DB01A16CF567000252270 /* ProfileViewController.h */,
+				C81DB01B16CF567000252270 /* ProfileViewController.m */,
+				C83DAB7116CF39E7002DE307 /* Storyboard.storyboard */,
 				C82EA52016CDCAEC00FB1335 /* Twitter Wall */,
 				C82EA51916CDCAEC00FB1335 /* Frameworks */,
 				C82EA51816CDCAEC00FB1335 /* Products */,
@@ -68,6 +90,9 @@
 		C82EA51916CDCAEC00FB1335 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C83DAB7316CF3B0F002DE307 /* QuartzCore.framework */,
+				C83DAB6F16CF39A4002DE307 /* Accounts.framework */,
+				C83DAB6D16CF3942002DE307 /* Social.framework */,
 				C82EA51A16CDCAEC00FB1335 /* UIKit.framework */,
 				C82EA51C16CDCAEC00FB1335 /* Foundation.framework */,
 				C82EA51E16CDCAEC00FB1335 /* CoreGraphics.framework */,
@@ -155,6 +180,7 @@
 				C82EA52D16CDCAEC00FB1335 /* Default.png in Resources */,
 				C82EA52F16CDCAEC00FB1335 /* Default@2x.png in Resources */,
 				C82EA53116CDCAEC00FB1335 /* Default-568h@2x.png in Resources */,
+				C83DAB7216CF39E7002DE307 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +193,8 @@
 			files = (
 				C82EA52716CDCAEC00FB1335 /* main.m in Sources */,
 				C82EA52B16CDCAEC00FB1335 /* npenpiAppDelegate.m in Sources */,
+				C81DB01916CF532A00252270 /* UsernameViewController.m in Sources */,
+				C81DB01C16CF567000252270 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +311,7 @@
 				C82EA53616CDCAEC00FB1335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
