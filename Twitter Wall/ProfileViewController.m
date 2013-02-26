@@ -57,14 +57,25 @@
             if (accounts.count > 0)
             {
                 ACAccount *twitterAccount = [accounts objectAtIndex:0];
+                
+                // https://api.twitter.com/1.1/users/show.json
+                // parameters:[NSDictionary dictionaryWithObject:username forKey:@"screen_name"]
+                
+                NSDictionary *params = @{@"q" : @"imgur",
+                                         @"geocode" : @"37.781157,-122.398720,1mi",
+                                         @"count" : @"20"};
+                // twitpic,yfrog,imgur,tweetphoto,plixi 
+                
+                //https://stream.twitter.com/1.1/statuses/sample.json
                 // Creating a request to get the info about a user on Twitter
-                SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"] parameters:[NSDictionary dictionaryWithObject:username forKey:@"screen_name"]];
+                SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/search/tweets.json"] parameters:params];
+                //SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"] parameters:[NSDictionary dictionaryWithObject:username forKey:@"screen_name"]];
                 [twitterInfoRequest setAccount:twitterAccount];
                 // Making the request
                 [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        // Check if we reached the reate limit
-                        if ([urlResponse statusCode] == 429) {
+                        // Check if we reached the reate limit 
+                        if ([urlResponse statusCode] == 429) { 
                             NSLog(@"Rate limit reached");
                             return;
                         }
@@ -77,6 +88,23 @@
                         if (responseData) {
                             NSError *error = nil;
                             NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+                            //NSLog(@"%@", TWData);
+                            NSArray* statuses = [(NSDictionary *)TWData objectForKey:@"statuses"];
+                            for(NSDictionary* dict in statuses) {
+                                NSLog(@"Screen Name: %@", [[dict objectForKey:@"user"] objectForKey:@"screen_name"]);
+                                NSLog(@"Tweet text: %@", [dict objectForKey:@"text"]);
+                                NSArray *urlsArray = [[dict objectForKey:@"entities"] objectForKey:@"urls"];
+                                if([urlsArray count] > 0) {
+                                    NSLog(@"Entity URL: %@", [[urlsArray objectAtIndex:0] objectForKey:@"url"]);
+                                    NSLog(@"Entity Display URL: %@", [[urlsArray objectAtIndex:0] objectForKey:@"display_url"]);
+                                    NSLog(@"Entity Expanded URL: %@", [[urlsArray objectAtIndex:0] objectForKey:@"expanded_url"]);
+                                }
+                                
+                            }
+                            //NSLog(@"Item: %@", [[TWData objectAtIndex: 0] objectForKey: @"statuses"]);
+//                            for(NSDictionary *item in TWData) {
+//                                NSLog(@"Item: %@", item);
+//                            }
                             // Filter the preferred data
                             NSString *screen_name = [(NSDictionary *)TWData objectForKey:@"screen_name"];
                             NSString *name = [(NSDictionary *)TWData objectForKey:@"name"];
